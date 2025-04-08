@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guwahati Tourism</title>
     <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: url('river-6896525_1280.jpg') no-repeat center center/cover;
+            background: url('resources/river-6896525_1280.jpg') no-repeat center center/cover;
             color: white;
             text-align: center;
+            overflow-y: auto; 
         }
         .header {
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
             display: flex;
@@ -21,6 +25,7 @@
             align-items: center;
             background: rgba(0, 0, 0, 0.8);
             padding: 10px;
+            padding-right: 20px;
             z-index: 1000;
         }
         .menu-bar {
@@ -38,6 +43,7 @@
         }
         .language-selector {
             padding: 5px;
+            margin-left: auto;
         }
         .intro {
             height: 100vh;
@@ -63,8 +69,10 @@
             margin-bottom: 20px;
         }
         .place img {
-            width: 100%;
-            height: auto;
+            max-width: 300px; /* Set a maximum width */
+            max-height: 200px; /* Set a maximum height */
+            width: auto; /* Maintain aspect ratio */
+            height: auto; /* Maintain aspect ratio */
             border-radius: 10px;
         }
     </style>
@@ -127,68 +135,68 @@
                 historical: "Historical Spots",
                 religiousTitle: "Religious Sites",
                 religiousContent: [
-                    { name: "Kamakhya Temple", desc: "A revered Shakti Peetha dedicated to Goddess Kamakhya.", img: "kamakhya_temple.jpg" },
-                    { name: "Umananda Temple", desc: "A beautiful Shiva temple located on Peacock Island.", img: "umananda_temple.jpg" },
-                    { name: "Basistha Temple", desc: "An ancient temple dedicated to Lord Shiva, located in a serene environment.", img: "basistha_temple.jpeg" },
-                    { name: "Navagraha Temple", desc: "A historic temple dedicated to the nine celestial bodies.", img: "navagraha_temple.jpeg" },
-                    { name: "ISKCON Temple", desc: "A Krishna temple known for its peaceful ambiance and spiritual activities.", img: "iskcon_temple.jpg" },
-                    { name: "Hajo Powa Mecca", desc: "A revered Islamic pilgrimage site said to contain soil from Mecca.", img: "hajo_powa_mecca.jpeg" },
-                    { name: "Christ Church", desc: "A significant Christian place of worship in Guwahati.", img: "christ_church.jpg" },
-                    { name: "Doul Govinda Temple", desc: "A famous Vaishnavite temple on the banks of the Brahmaputra River.", img: "doul_govinda_temple.jpg" },
-                    { name: "Purva Tirupati Balaji Temple", desc: "A beautiful temple dedicated to Lord Venkateswara.", img: "balaji_temple.jpg" },
-                    { name: "Lankeshwar Temple", desc: "A less crowded but significant Shiva temple.", img: "lankeshwar_temple.jpg" }
+                    { name: "Kamakhya Temple", desc: "A revered Shakti Peetha dedicated to Goddess Kamakhya.", img: "resources/kamakhya_temple.jpg" },
+                    { name: "Umananda Temple", desc: "A beautiful Shiva temple located on Peacock Island.", img: "resources/umananda_temple.jpg" },
+                    { name: "Basistha Temple", desc: "An ancient temple dedicated to Lord Shiva, located in a serene environment.", img: "resources/basistha_temple.jpeg" },
+                    { name: "Navagraha Temple", desc: "A historic temple dedicated to the nine celestial bodies.", img: "resources/navagraha_temple.jpeg" },
+                    { name: "ISKCON Temple", desc: "A Krishna temple known for its peaceful ambiance and spiritual activities.", img: "resources/iskcon_temple.jpg" },
+                    { name: "Hajo Powa Mecca", desc: "A revered Islamic pilgrimage site said to contain soil from Mecca.", img: "resources/hajo_powa_mecca.jpeg" },
+                    { name: "Christ Church", desc: "A significant Christian place of worship in Guwahati.", img: "resources/christ_church.jpg" },
+                    { name: "Doul Govinda Temple", desc: "A famous Vaishnavite temple on the banks of the Brahmaputra River.", img: "resources/doul_govinda_temple.jpg" },
+                    { name: "Purva Tirupati Balaji Temple", desc: "A beautiful temple dedicated to Lord Venkateswara.", img: "resources/balaji_temple.jpg" },
+                    { name: "Lankeshwar Temple", desc: "A less crowded but significant Shiva temple.", img: "resources/lankeshwar_temple.jpg" }
                 ],
                 educationalTitle: "Educational",
                 educationalContent: [
-                    { name: "Guwahati University", desc: "A prestigious educational institution offering a variety of courses.", img: "guwahati_university.jpg" },
-                    { name: "Assam Engineering College", desc: "An engineering college with a legacy of excellence in education.", img: "assam_engineering_college.jpg" },
-                    { name: "Cotton University", desc: "One of the oldest universities in Assam, known for its academic rigor.", img: "cotton_university.jpg" },
-                    { name: "Indian Institute of Technology Guwahati", desc: "A leading technology institute in India, offering various technical programs.", img: "iit_guwahati.jpg" },
-                    { name: "Assam Medical College", desc: "The first medical college in Assam, providing quality medical education.", img: "assam_medical_college.jpg" },
-                    { name: "Guwahati Zoo and Botanical Garden", desc: "A great place to explore wildlife and learn about biodiversity.", img: "guwahati_zoo_botanical_garden.jpg" },
-                    { name: "Borah Institute of Engineering and Technology", desc: "An institution known for its engineering programs and research.", img: "borah_institute.jpg" },
-                    { name: "National Institute of Fashion Technology, Guwahati", desc: "A premier institute for fashion designing and related courses.", img: "nift_guwahati.jpg" },
-                    { name: "Tezpur University", desc: "A leading university in Assam known for its interdisciplinary programs.", img: "tezpur_university.jpg" },
-                    { name: "Gauhati Commerce College", desc: "A reputed college offering commerce courses in Guwahati.", img: "gauhati_commerce_college.jpg" }
+                    { name: "Guwahati University", desc: "A prestigious educational institution offering a variety of courses.", img: "resources/guwahati_university.jpg" },
+                    { name: "Assam Engineering College", desc: "An engineering college with a legacy of excellence in education.", img: "resources/assam_engineering_college.jpg" },
+                    { name: "Cotton University", desc: "One of the oldest universities in Assam, known for its academic rigor.", img: "resources/cotton_university.jpg" },
+                    { name: "Indian Institute of Technology Guwahati", desc: "A leading technology institute in India, offering various technical programs.", img: "resources/iit_guwahati.jpg" },
+                    { name: "Assam Medical College", desc: "The first medical college in Assam, providing quality medical education.", img: "resources/assam_medical_college.jpg" },
+                    { name: "Guwahati Zoo and Botanical Garden", desc: "A great place to explore wildlife and learn about biodiversity.", img: "resources/guwahati_zoo_botanical_garden.jpg" },
+                    { name: "Borah Institute of Engineering and Technology", desc: "An institution known for its engineering programs and research.", img: "resources/borah_institute.jpg" },
+                    { name: "National Institute of Fashion Technology, Guwahati", desc: "A premier institute for fashion designing and related courses.", img: "resources/nift_guwahati.jpg" },
+                    { name: "Tezpur University", desc: "A leading university in Assam known for its interdisciplinary programs.", img: "resources/tezpur_university.jpg" },
+                    { name: "Gauhati Commerce College", desc: "A reputed college offering commerce courses in Guwahati.", img: "resources/gauhati_commerce_college.jpg" }
                 ],
                 natureTitle: "Nature",
                 natureContent: [
-                    { name: "Kaziranga National Park", desc: "A UNESCO World Heritage site known for its population of one-horned rhinoceroses.", img: "kaziranga_national_park.jpg" },
-                    { name: "Manas National Park", desc: "A national park and UNESCO World Heritage site known for its rich biodiversity.", img: "manas_national_park.jpg" },
-                    { name: "Umananda Island", desc: "A small island located in the Brahmaputra River, offering picturesque views and serenity.", img: "umananda_island.jpg" },
-                    { name: "Majuli Island", desc: "The world's largest river island, known for its vibrant culture and natural beauty.", img: "majuli_island.jpg" },
-                    { name: "Nameri National Park", desc: "A beautiful park with diverse wildlife, famous for bird watching and trekking.", img: "nameri_national_park.jpg" },
-                    { name: "Dibru-Saikhowa National Park", desc: "A haven for wildlife, particularly known for its swamp and migratory birds.", img: "dibru_saikhowa_national_park.jpg" },
-                    { name: "Sualkuchi", desc: "A village famous for its natural beauty and silk weaving traditions.", img: "sualkuchi.jpg" },
-                    { name: "Brahmaputra River", desc: "The lifeline of Assam, known for its vastness and rich ecosystems.", img: "brahmaputra_river.jpg" },
-                    { name: "Bhorali River", desc: "A scenic river flowing through the Assam Valley, known for its tranquility and surrounding nature.", img: "bhorali_river.jpg" },
-                    { name: "Kakodonga River", desc: "A peaceful river surrounded by lush greenery, offering a calm retreat.", img: "kakodonga_river.jpg" }
+                    { name: "Kaziranga National Park", desc: "A UNESCO World Heritage site known for its population of one-horned rhinoceroses.", img: "resources/kaziranga_national_park.jpg" },
+                    { name: "Manas National Park", desc: "A national park and UNESCO World Heritage site known for its rich biodiversity.", img: "resources/manas_national_park.jpg" },
+                    { name: "Umananda Island", desc: "A small island located in the Brahmaputra River, offering picturesque views and serenity.", img: "resources/umananda_island.jpg" },
+                    { name: "Majuli Island", desc: "The world's largest river island, known for its vibrant culture and natural beauty.", img: "resources/majuli_island.jpg" },
+                    { name: "Nameri National Park", desc: "A beautiful park with diverse wildlife, famous for bird watching and trekking.", img: "resources/nameri_national_park.jpg" },
+                    { name: "Dibru-Saikhowa National Park", desc: "A haven for wildlife, particularly known for its swamp and migratory birds.", img: "resources/dibru_saikhowa_national_park.jpg" },
+                    { name: "Sualkuchi", desc: "A village famous for its natural beauty and silk weaving traditions.", img: "resources/sualkuchi.jpg" },
+                    { name: "Brahmaputra River", desc: "The lifeline of Assam, known for its vastness and rich ecosystems.", img: "resources/brahmaputra_river.jpg" },
+                    { name: "Bhorali River", desc: "A scenic river flowing through the Assam Valley, known for its tranquility and surrounding nature.", img: "resources/bhorali_river.jpg" },
+                    { name: "Kakodonga River", desc: "A peaceful river surrounded by lush greenery, offering a calm retreat.", img: "resources/kakodonga_river.jpg" }
                 ],
                 foodTitle: "Food",
                 foodContent: [
-                    { name: "Khorika", desc: "An authentic Assamese restaurant known for its traditional grilled meats and fish dishes.", img: "khorika.jpg" },
-                    { name: "Paradise Restaurant", desc: "Famous for serving authentic Assamese and North-Eastern cuisine in a cozy ambiance.", img: "paradise_restaurant.jpg" },
-                    { name: "Rajmahal Restaurant", desc: "A well-known place offering an extensive menu of Assamese and Indian delicacies.", img: "rajmahal_restaurant.jpg" },
-                    { name: "Dolphin Restaurant", desc: "A casual dining spot serving a variety of authentic seafood and Assamese delicacies.", img: "dolphin_restaurant.jpg" },
-                    { name: "The Kitchen", desc: "An eatery that specializes in Assamese traditional food, featuring local ingredients and flavors.", img: "the_kitchen.jpg" },
-                    { name: "Mishing Kitchen", desc: "A restaurant offering the authentic flavors of Mishing cuisine, with a special focus on fish and rice-based dishes.", img: "mishing_kitchen.jpg" },
-                    { name: "Bamboo Shoot", desc: "A unique restaurant serving a fusion of Assamese and tribal foods, including bamboo shoot dishes.", img: "bamboo_shoot.jpg" },
-                    { name: "Kalyani", desc: "A fine dining restaurant offering a wide selection of Assamese and regional dishes, specializing in vegetarian options.", img: "kalyani.jpg" },
-                    { name: "Cafe Assam", desc: "A place that brings authentic Assamese flavors to the table, offering local snacks, teas, and delicacies.", img: "cafe_assam.jpg" },
-                    { name: "Tandoor", desc: "Serving authentic tandoori and Assamese fusion dishes, with a wide range of meats and seafood.", img: "tandoor.jpg" }
+                    { name: "Khorika", desc: "An authentic Assamese restaurant known for its traditional grilled meats and fish dishes.", img: "resources/khorika.jpg" },
+                    { name: "Paradise Restaurant", desc: "Famous for serving authentic Assamese and North-Eastern cuisine in a cozy ambiance.", img: "resources/paradise_restaurant.jpg" },
+                    { name: "Rajmahal Restaurant", desc: "A well-known place offering an extensive menu of Assamese and Indian delicacies.", img: "resources/rajmahal_restaurant.jpg" },
+                    { name: "Dolphin Restaurant", desc: "A casual dining spot serving a variety of authentic seafood and Assamese delicacies.", img: "resources/dolphin_restaurant.jpg" },
+                    { name: "The Kitchen", desc: "An eatery that specializes in Assamese traditional food, featuring local ingredients and flavors.", img: "resources/the_kitchen.jpg" },
+                    { name: "Mishing Kitchen", desc: "A restaurant offering the authentic flavors of Mishing cuisine, with a special focus on fish and rice-based dishes.", img: "resources/mishing_kitchen.jpg" },
+                    { name: "Bamboo Shoot", desc: "A unique restaurant serving a fusion of Assamese and tribal foods, including bamboo shoot dishes.", img: "resources/bamboo_shoot.jpg" },
+                    { name: "Kalyani", desc: "A fine dining restaurant offering a wide selection of Assamese and regional dishes, specializing in vegetarian options.", img: "resources/kalyani.jpg" },
+                    { name: "Cafe Assam", desc: "A place that brings authentic Assamese flavors to the table, offering local snacks, teas, and delicacies.", img: "resources/cafe_assam.jpg" },
+                    { name: "Tandoor", desc: "Serving authentic tandoori and Assamese fusion dishes, with a wide range of meats and seafood.", img: "resources/tandoor.jpg" }
                 ],
                 historicalTitle: "Historical Spots",
                 historicalContent: [
-                    { name: "Pride of Assam", desc: "A monument commemorating the historical significance of Assam in Indian independence.", img: "pride_of_assam.jpg" },
-                    { name: "Guwahati War Memorial", desc: "A memorial honoring the soldiers who fought in World War II and other conflicts.", img: "guwahati_war_memorial.jpg" },
-                    { name: "Kamakhya Temple History", desc: "A historical temple known for its association with the ancient Shakti worship.", img: "kamakhya_temple_history.jpg" },
-                    { name: "Assam State Museum", desc: "A museum that showcases the rich cultural and historical heritage of Assam.", img: "assam_state_museum.jpg" },
-                    { name: "Madan Kamdev", desc: "An archaeological site containing the ruins of ancient temples, believed to be linked to the mythological Madan Kamdev.", img: "madan_kamdev.jpg" },
-                    { name: "Kaziranga National Park", desc: "A UNESCO World Heritage Site known for its historical significance in wildlife conservation, especially the one-horned rhinoceros.", img: "kaziranga_national_park.jpg" },
-                    { name: "Borgoswar Fort", desc: "An ancient fort built in the 17th century, which stands as a symbol of Assam’s rich history.", img: "borgoswar_fort.jpg" },
-                    { name: "Tezpur Ruins", desc: "The ruins of ancient temples and palaces from the medieval era, showcasing Assam’s historical grandeur.", img: "tezpur_ruins.jpg" },
-                    { name: "Tocklai Tea Research Centre", desc: "A significant historical site for the tea industry in Assam, offering insight into tea cultivation and history.", img: "tocklai_tea_research_centre.jpg" },
-                    { name: "Barpeta Satra", desc: "A historical cultural institution founded in the 16th century to spread the Vaishnavite culture in Assam.", img: "barpeta_satra.jpg" }
+                    { name: "Pride of Assam", desc: "A monument commemorating the historical significance of Assam in Indian independence.", img: "resources/pride_of_assam.jpg" },
+                    { name: "Guwahati War Memorial", desc: "A memorial honoring the soldiers who fought in World War II and other conflicts.", img: "resources/guwahati_war_memorial.jpg" },
+                    { name: "Kamakhya Temple History", desc: "A historical temple known for its association with the ancient Shakti worship.", img: "resources/kamakhya_temple_history.jpg" },
+                    { name: "Assam State Museum", desc: "A museum that showcases the rich cultural and historical heritage of Assam.", img: "resources/assam_state_museum.jpg" },
+                    { name: "Madan Kamdev", desc: "An archaeological site containing the ruins of ancient temples, believed to be linked to the mythological Madan Kamdev.", img: "resources/madan_kamdev.jpg" },
+                    { name: "Kaziranga National Park", desc: "A UNESCO World Heritage Site known for its historical significance in wildlife conservation, especially the one-horned rhinoceros.", img: "resources/kaziranga_national_park.jpg" },
+                    { name: "Borgoswar Fort", desc: "An ancient fort built in the 17th century, which stands as a symbol of Assam’s rich history.", img: "resources/borgoswar_fort.jpg" },
+                    { name: "Tezpur Ruins", desc: "The ruins of ancient temples and palaces from the medieval era, showcasing Assam’s historical grandeur.", img: "resources/tezpur_ruins.jpg" },
+                    { name: "Tocklai Tea Research Centre", desc: "A significant historical site for the tea industry in Assam, offering insight into tea cultivation and history.", img: "resources/tocklai_tea_research_centre.jpg" },
+                    { name: "Barpeta Satra", desc: "A historical cultural institution founded in the 16th century to spread the Vaishnavite culture in Assam.", img: "resources/barpeta_satra.jpg" }
                 ]
             },
             hi: {
@@ -201,68 +209,68 @@
                 historical: "ऐतिहासिक स्थल",
                 religiousTitle: "धार्मिक स्थल",
                 religiousContent: [
-                    { name: "कामाख्या मंदिर", desc: "देवी कामाख्या को समर्पित एक पूजनीय शक्तिपीठ।", img: "kamakhya_temple.jpg" },
-                    { name: "उमानंद मंदिर", desc: "मोर द्वीप पर स्थित एक सुंदर शिव मंदिर।", img: "umananda_temple.jpg" },
-                    { name: "बासिष्ठ मंदिर", desc: "शांत वातावरण में स्थित एक प्राचीन शिव मंदिर।", img: "basistha_temple.jpg" },
-                    { name: "नवग्रह मंदिर", desc: "नौ ग्रहों को समर्पित एक ऐतिहासिक मंदिर।", img: "navagraha_temple.jpg" },
-                    { name: "इस्कॉन मंदिर", desc: "शांत वातावरण और आध्यात्मिक गतिविधियों के लिए प्रसिद्ध कृष्ण मंदिर।", img: "iskcon_temple.jpg" },
-                    { name: "हाजो पोवा मक्का", desc: "एक पूजनीय इस्लामी तीर्थ स्थल, जिसमें मक्का की मिट्टी है।", img: "hajo_powa_mecca.jpg" },
-                    { name: "क्राइस्ट चर्च", desc: "गुवाहाटी में एक महत्वपूर्ण ईसाई पूजा स्थल।", img: "christ_church.jpg" },
-                    { name: "दौल गोविंदा मंदिर", desc: "ब्रह्मपुत्र नदी के किनारे स्थित एक प्रसिद्ध वैष्णव मंदिर।", img: "doul_govinda_temple.jpg" },
-                    { name: "पूर्व तिरुपति बालाजी मंदिर", desc: "भगवान वेंकटेश्वर को समर्पित एक सुंदर मंदिर।", img: "balaji_temple.jpg" },
-                    { name: "लंकेश्वर मंदिर", desc: "एक कम भीड़ वाला लेकिन महत्वपूर्ण शिव मंदिर।", img: "lankeshwar_temple.jpg" }
+                    { name: "कामाख्या मंदिर", desc: "देवी कामाख्या को समर्पित एक पूजनीय शक्तिपीठ।", img: "resources/kamakhya_temple.jpg" },
+                    { name: "उमानंद मंदिर", desc: "मोर द्वीप पर स्थित एक सुंदर शिव मंदिर।", img: "resources/umananda_temple.jpg" },
+                    { name: "बासिष्ठ मंदिर", desc: "शांत वातावरण में स्थित एक प्राचीन शिव मंदिर।", img: "resources/basistha_temple.jpg" },
+                    { name: "नवग्रह मंदिर", desc: "नौ ग्रहों को समर्पित एक ऐतिहासिक मंदिर।", img: "resources/navagraha_temple.jpg" },
+                    { name: "इस्कॉन मंदिर", desc: "शांत वातावरण और आध्यात्मिक गतिविधियों के लिए प्रसिद्ध कृष्ण मंदिर।", img: "resources/iskcon_temple.jpg" },
+                    { name: "हाजो पोवा मक्का", desc: "एक पूजनीय इस्लामी तीर्थ स्थल, जिसमें मक्का की मिट्टी है।", img: "resources/hajo_powa_mecca.jpg" },
+                    { name: "क्राइस्ट चर्च", desc: "गुवाहाटी में एक महत्वपूर्ण ईसाई पूजा स्थल।", img: "resources/christ_church.jpg" },
+                    { name: "दौल गोविंदा मंदिर", desc: "ब्रह्मपुत्र नदी के किनारे स्थित एक प्रसिद्ध वैष्णव मंदिर।", img: "resources/doul_govinda_temple.jpg" },
+                    { name: "पूर्व तिरुपति बालाजी मंदिर", desc: "भगवान वेंकटेश्वर को समर्पित एक सुंदर मंदिर।", img: "resources/balaji_temple.jpg" },
+                    { name: "लंकेश्वर मंदिर", desc: "एक कम भीड़ वाला लेकिन महत्वपूर्ण शिव मंदिर।", img: "resources/lankeshwar_temple.jpg" }
                 ],
                 educationalTitle: "शैक्षिक",
                 educationalContent: [
-                    { name: "गुवाहाटी विश्वविद्यालय", desc: "विभिन्न पाठ्यक्रमों की पेशकश करने वाला एक प्रतिष्ठित शैक्षिक संस्थान।", img: "guwahati_university.jpg" },
-                    { name: "असम इंजीनियरिंग कॉलेज", desc: "शिक्षा में उत्कृष्टता की विरासत वाला एक इंजीनियरिंग कॉलेज।", img: "assam_engineering_college.jpg" },
-                    { name: "कॉटन विश्वविद्यालय", desc: "असम के सबसे पुराने विश्वविद्यालयों में से एक, जो अपनी शैक्षणिक कठोरता के लिए जाना जाता है।", img: "cotton_university.jpg" },
-                    { name: "भारतीय प्रौद्योगिकी संस्थान गुवाहाटी", desc: "भारत का एक प्रमुख प्रौद्योगिकी संस्थान, जो विभिन्न तकनीकी कार्यक्रमों की पेशकश करता है।", img: "iit_guwahati.jpg" },
-                    { name: "असम मेडिकल कॉलेज", desc: "असम का पहला मेडिकल कॉलेज, जो गुणवत्तापूर्ण चिकित्सा शिक्षा प्रदान करता है।", img: "assam_medical_college.jpg" },
-                    { name: "गुवाहाटी चिड़ियाघर और वनस्पति उद्यान", desc: "वन्यजीवों का पता लगाने और जैव विविधता के बारे में जानने के लिए एक शानदार जगह।", img: "guwahati_zoo_botanical_garden.jpg" },
-                    { name: "बोरा इंजीनियरिंग और प्रौद्योगिकी संस्थान", desc: "अपने इंजीनियरिंग कार्यक्रमों और अनुसंधान के लिए जाना जाने वाला एक संस्थान।", img: "borah_institute.jpg" },
-                    { name: "राष्ट्रीय फैशन प्रौद्योगिकी संस्थान, गुवाहाटी", desc: "फैशन डिजाइनिंग और संबंधित पाठ्यक्रमों के लिए एक प्रमुख संस्थान।", img: "nift_guwahati.jpg" },
-                    { name: "तेजपुर विश्वविद्यालय", desc: "असम का एक प्रमुख विश्वविद्यालय, जो अपने अंतःविषय कार्यक्रमों के लिए जाना जाता है।", img: "tezpur_university.jpg" },
-                    { name: "गौहाटी कॉमर्स कॉलेज", desc: "गुवाहाटी में वाणिज्य पाठ्यक्रमों की पेशकश करने वाला एक प्रतिष्ठित कॉलेज।", img: "gauhati_commerce_college.jpg" }
+                    { name: "गुवाहाटी विश्वविद्यालय", desc: "विभिन्न पाठ्यक्रमों की पेशकश करने वाला एक प्रतिष्ठित शैक्षिक संस्थान।", img: "resources/guwahati_university.jpg" },
+                    { name: "असम इंजीनियरिंग कॉलेज", desc: "शिक्षा में उत्कृष्टता की विरासत वाला एक इंजीनियरिंग कॉलेज।", img: "resources/assam_engineering_college.jpg" },
+                    { name: "कॉटन विश्वविद्यालय", desc: "असम के सबसे पुराने विश्वविद्यालयों में से एक, जो अपनी शैक्षणिक कठोरता के लिए जाना जाता है।", img: "resources/cotton_university.jpg" },
+                    { name: "भारतीय प्रौद्योगिकी संस्थान गुवाहाटी", desc: "भारत का एक प्रमुख प्रौद्योगिकी संस्थान, जो विभिन्न तकनीकी कार्यक्रमों की पेशकश करता है।", img: "resources/iit_guwahati.jpg" },
+                    { name: "असम मेडिकल कॉलेज", desc: "असम का पहला मेडिकल कॉलेज, जो गुणवत्तापूर्ण चिकित्सा शिक्षा प्रदान करता है।", img: "resources/assam_medical_college.jpg" },
+                    { name: "गुवाहाटी चिड़ियाघर और वनस्पति उद्यान", desc: "वन्यजीवों का पता लगाने और जैव विविधता के बारे में जानने के लिए एक शानदार जगह।", img: "resources/guwahati_zoo_botanical_garden.jpg" },
+                    { name: "बोरा इंजीनियरिंग और प्रौद्योगिकी संस्थान", desc: "अपने इंजीनियरिंग कार्यक्रमों और अनुसंधान के लिए जाना जाने वाला एक संस्थान।", img: "resources/borah_institute.jpg" },
+                    { name: "राष्ट्रीय फैशन प्रौद्योगिकी संस्थान, गुवाहाटी", desc: "फैशन डिजाइनिंग और संबंधित पाठ्यक्रमों के लिए एक प्रमुख संस्थान।", img: "resources/nift_guwahati.jpg" },
+                    { name: "तेजपुर विश्वविद्यालय", desc: "असम का एक प्रमुख विश्वविद्यालय, जो अपने अंतःविषय कार्यक्रमों के लिए जाना जाता है।", img: "resources/tezpur_university.jpg" },
+                    { name: "गौहाटी कॉमर्स कॉलेज", desc: "गुवाहाटी में वाणिज्य पाठ्यक्रमों की पेशकश करने वाला एक प्रतिष्ठित कॉलेज।", img: "resources/gauhati_commerce_college.jpg" }
                 ],
                 natureTitle: "प्रकृति",
                 natureContent: [
-                    { name: "काजीरंगा राष्ट्रीय उद्यान", desc: "एक यूनेस्को विश्व धरोहर स्थल, जो अपने एक-सींग वाले गैंडों की आबादी के लिए जाना जाता है।", img: "kaziranga_national_park.jpg" },
-                    { name: "मानस राष्ट्रीय उद्यान", desc: "एक राष्ट्रीय उद्यान और यूनेस्को विश्व धरोहर स्थल, जो अपनी समृद्ध जैव विविधता के लिए जाना जाता है।", img: "manas_national_park.jpg" },
-                    { name: "उमानंद द्वीप", desc: "ब्रह्मपुत्र नदी में स्थित एक छोटा द्वीप, जो सुंदर दृश्य और शांति प्रदान करता है।", img: "umananda_island.jpg" },
-                    { name: "माजुली द्वीप", desc: "दुनिया का सबसे बड़ा नदी द्वीप, जो अपनी जीवंत संस्कृति और प्राकृतिक सुंदरता के लिए जाना जाता है।", img: "majuli_island.jpg" },
-                    { name: "नामेरी राष्ट्रीय उद्यान", desc: "विविध वन्यजीवों के साथ एक सुंदर पार्क, जो पक्षी देखने और ट्रेकिंग के लिए प्रसिद्ध है।", img: "nameri_national_park.jpg" },
-                    { name: "डिब्रू-सैखोवा राष्ट्रीय उद्यान", desc: "वन्यजीवों के लिए एक स्वर्ग, विशेष रूप से अपने दलदली और प्रवासी पक्षियों के लिए जाना जाता है।", img: "dibru_saikhowa_national_park.jpg" },
-                    { name: "सुआलकुची", desc: "प्राकृतिक सुंदरता और रेशम बुनाई परंपराओं के लिए प्रसिद्ध एक गांव।", img: "sualkuchi.jpg" },
-                    { name: "ब्रह्मपुत्र नदी", desc: "असम की जीवनरेखा, जो अपनी विशालता और समृद्ध पारिस्थितिक तंत्र के लिए जानी जाती है।", img: "brahmaputra_river.jpg" },
-                    { name: "भोराली नदी", desc: "असम घाटी से बहने वाली एक सुंदर नदी, जो अपनी शांति और आसपास की प्रकृति के लिए जानी जाती है।", img: "bhorali_river.jpg" },
-                    { name: "काकोडोंगा नदी", desc: "हरी-भरी हरियाली से घिरी एक शांत नदी, जो एक शांतिपूर्ण विश्राम प्रदान करती है।", img: "kakodonga_river.jpg" }
+                    { name: "काजीरंगा राष्ट्रीय उद्यान", desc: "एक यूनेस्को विश्व धरोहर स्थल, जो अपने एक-सींग वाले गैंडों की आबादी के लिए जाना जाता है।", img: "resources/kaziranga_national_park.jpg" },
+                    { name: "मानस राष्ट्रीय उद्यान", desc: "एक राष्ट्रीय उद्यान और यूनेस्को विश्व धरोहर स्थल, जो अपनी समृद्ध जैव विविधता के लिए जाना जाता है।", img: "resources/manas_national_park.jpg" },
+                    { name: "उमानंद द्वीप", desc: "ब्रह्मपुत्र नदी में स्थित एक छोटा द्वीप, जो सुंदर दृश्य और शांति प्रदान करता है।", img: "resources/umananda_island.jpg" },
+                    { name: "माजुली द्वीप", desc: "दुनिया का सबसे बड़ा नदी द्वीप, जो अपनी जीवंत संस्कृति और प्राकृतिक सुंदरता के लिए जाना जाता है।", img: "resources/majuli_island.jpg" },
+                    { name: "नामेरी राष्ट्रीय उद्यान", desc: "विविध वन्यजीवों के साथ एक सुंदर पार्क, जो पक्षी देखने और ट्रेकिंग के लिए प्रसिद्ध है।", img: "resources/nameri_national_park.jpg" },
+                    { name: "डिब्रू-सैखोवा राष्ट्रीय उद्यान", desc: "वन्यजीवों के लिए एक स्वर्ग, विशेष रूप से अपने दलदली और प्रवासी पक्षियों के लिए जाना जाता है।", img: "resources/dibru_saikhowa_national_park.jpg" },
+                    { name: "सुआलकुची", desc: "प्राकृतिक सुंदरता और रेशम बुनाई परंपराओं के लिए प्रसिद्ध एक गांव।", img: "resources/sualkuchi.jpg" },
+                    { name: "ब्रह्मपुत्र नदी", desc: "असम की जीवनरेखा, जो अपनी विशालता और समृद्ध पारिस्थितिक तंत्र के लिए जानी जाती है।", img: "resources/brahmaputra_river.jpg" },
+                    { name: "भोराली नदी", desc: "असम घाटी से बहने वाली एक सुंदर नदी, जो अपनी शांति और आसपास की प्रकृति के लिए जानी जाती है।", img: "resources/bhorali_river.jpg" },
+                    { name: "काकोडोंगा नदी", desc: "हरी-भरी हरियाली से घिरी एक शांत नदी, जो एक शांतिपूर्ण विश्राम प्रदान करती है।", img: "resources/kakodonga_river.jpg" }
                 ],
                 foodTitle: "भोजन",
                 foodContent: [
-                    { name: "खोरिका", desc: "एक प्रामाणिक असमिया रेस्तरां, जो अपने पारंपरिक ग्रिल्ड मांस और मछली व्यंजनों के लिए जाना जाता है।", img: "khorika.jpg" },
-                    { name: "पैराडाइज रेस्तरां", desc: "एक आरामदायक माहौल में प्रामाणिक असमिया और उत्तर-पूर्वी व्यंजन परोसने के लिए प्रसिद्ध।", img: "paradise_restaurant.jpg" },
-                    { name: "राजमहल रेस्तरां", desc: "असमिया और भारतीय व्यंजनों के विस्तृत मेनू की पेशकश करने वाला एक प्रसिद्ध स्थान।", img: "rajmahal_restaurant.jpg" },
-                    { name: "डॉल्फिन रेस्तरां", desc: "विभिन्न प्रामाणिक समुद्री भोजन और असमिया व्यंजन परोसने वाला एक कैजुअल डाइनिंग स्पॉट।", img: "dolphin_restaurant.jpg" },
-                    { name: "द किचन", desc: "एक भोजनालय जो असमिया पारंपरिक भोजन में विशेषज्ञता रखता है, जिसमें स्थानीय सामग्री और स्वाद शामिल हैं।", img: "the_kitchen.jpg" },
-                    { name: "मिशिंग किचन", desc: "एक रेस्तरां जो मछली और चावल आधारित व्यंजनों पर विशेष ध्यान देने के साथ मिशिंग व्यंजनों के प्रामाणिक स्वाद प्रदान करता है।", img: "mishing_kitchen.jpg" },
-                    { name: "बांस की शूट", desc: "एक अनूठा रेस्तरां जो असमिया और जनजातीय खाद्य पदार्थों का मिश्रण परोसता है, जिसमें बांस की शूट व्यंजन शामिल हैं।", img: "bamboo_shoot.jpg" },
-                    { name: "कल्याणी", desc: "एक फाइन डाइनिंग रेस्तरां जो असमिया और क्षेत्रीय व्यंजनों का विस्तृत चयन पेश करता है, जो शाकाहारी विकल्पों में विशेषज्ञता रखता है।", img: "kalyani.jpg" },
-                    { name: "कैफे असम", desc: "एक ऐसा स्थान जो प्रामाणिक असमिया स्वाद को मेज पर लाता है, जिसमें स्थानीय स्नैक्स, चाय और व्यंजन शामिल हैं।", img: "cafe_assam.jpg" },
-                    { name: "तंदूर", desc: "प्रामाणिक तंदूरी और असमिया फ्यूजन व्यंजन परोसने वाला, जिसमें मांस और समुद्री भोजन की एक विस्तृत श्रृंखला शामिल है।", img: "tandoor.jpg" }
+                    { name: "खोरिका", desc: "एक प्रामाणिक असमिया रेस्तरां, जो अपने पारंपरिक ग्रिल्ड मांस और मछली व्यंजनों के लिए जाना जाता है।", img: "resources/khorika.jpg" },
+                    { name: "पैराडाइज रेस्तरां", desc: "एक आरामदायक माहौल में प्रामाणिक असमिया और उत्तर-पूर्वी व्यंजन परोसने के लिए प्रसिद्ध।", img: "resources/paradise_restaurant.jpg" },
+                    { name: "राजमहल रेस्तरां", desc: "असमिया और भारतीय व्यंजनों के विस्तृत मेनू की पेशकश करने वाला एक प्रसिद्ध स्थान।", img: "resources/rajmahal_restaurant.jpg" },
+                    { name: "डॉल्फिन रेस्तरां", desc: "विभिन्न प्रामाणिक समुद्री भोजन और असमिया व्यंजन परोसने वाला एक कैजुअल डाइनिंग स्पॉट।", img: "resources/dolphin_restaurant.jpg" },
+                    { name: "द किचन", desc: "एक भोजनालय जो असमिया पारंपरिक भोजन में विशेषज्ञता रखता है, जिसमें स्थानीय सामग्री और स्वाद शामिल हैं।", img: "resources/the_kitchen.jpg" },
+                    { name: "मिशिंग किचन", desc: "एक रेस्तरां जो मछली और चावल आधारित व्यंजनों पर विशेष ध्यान देने के साथ मिशिंग व्यंजनों के प्रामाणिक स्वाद प्रदान करता है।", img: "resources/mishing_kitchen.jpg" },
+                    { name: "बांस की शूट", desc: "एक अनूठा रेस्तरां जो असमिया और जनजातीय खाद्य पदार्थों का मिश्रण परोसता है, जिसमें बांस की शूट व्यंजन शामिल हैं।", img: "resources/bamboo_shoot.jpg" },
+                    { name: "कल्याणी", desc: "एक फाइन डाइनिंग रेस्तरां जो असमिया और क्षेत्रीय व्यंजनों का विस्तृत चयन पेश करता है, जो शाकाहारी विकल्पों में विशेषज्ञता रखता है।", img: "resources/kalyani.jpg" },
+                    { name: "कैफे असम", desc: "एक ऐसा स्थान जो प्रामाणिक असमिया स्वाद को मेज पर लाता है, जिसमें स्थानीय स्नैक्स, चाय और व्यंजन शामिल हैं।", img: "resources/cafe_assam.jpg" },
+                    { name: "तंदूर", desc: "प्रामाणिक तंदूरी और असमिया फ्यूजन व्यंजन परोसने वाला, जिसमें मांस और समुद्री भोजन की एक विस्तृत श्रृंखला शामिल है।", img: "resources/tandoor.jpg" }
                 ],
                 historicalTitle: "ऐतिहासिक स्थल",
                 historicalContent: [
-                    { name: "असम का गौरव", desc: "भारतीय स्वतंत्रता में असम के ऐतिहासिक महत्व को याद करने वाला एक स्मारक।", img: "pride_of_assam.jpg" },
-                    { name: "गुवाहाटी युद्ध स्मारक", desc: "द्वितीय विश्व युद्ध और अन्य संघर्षों में लड़ने वाले सैनिकों को सम्मानित करने वाला एक स्मारक।", img: "guwahati_war_memorial.jpg" },
-                    { name: "कामाख्या मंदिर का इतिहास", desc: "प्राचीन शक्ति पूजा के साथ अपने संबंध के लिए जाना जाने वाला एक ऐतिहासिक मंदिर।", img: "kamakhya_temple_history.jpg" },
-                    { name: "असम राज्य संग्रहालय", desc: "असम की समृद्ध सांस्कृतिक और ऐतिहासिक विरासत को प्रदर्शित करने वाला एक संग्रहालय।", img: "assam_state_museum.jpg" },
-                    { name: "मदन कामदेव", desc: "प्राचीन मंदिरों के खंडहरों वाला एक पुरातात्विक स्थल, जिसे पौराणिक मदन कामदेव से जोड़ा जाता है।", img: "madan_kamdev.jpg" },
-                    { name: "काजीरंगा राष्ट्रीय उद्यान", desc: "वन्यजीव संरक्षण में इसके ऐतिहासिक महत्व के लिए जाना जाने वाला एक यूनेस्को विश्व धरोहर स्थल, विशेष रूप से एक-सींग वाले गैंडे।", img: "kaziranga_national_park.jpg" },
-                    { name: "बोरगोसवार किला", desc: "17वीं शताब्दी में निर्मित एक प्राचीन किला, जो असम के समृद्ध इतिहास का प्रतीक है।", img: "borgoswar_fort.jpg" },
-                    { name: "तेजपुर खंडहर", desc: "मध्यकालीन युग के प्राचीन मंदिरों और महलों के खंडहर, जो असम की ऐतिहासिक भव्यता को प्रदर्शित करते हैं।", img: "tezpur_ruins.jpg" },
-                    { name: "टोकलाई चाय अनुसंधान केंद्र", desc: "असम में चाय उद्योग के लिए एक महत्वपूर्ण ऐतिहासिक स्थल, जो चाय की खेती और इतिहास में अंतर्दृष्टि प्रदान करता है।", img: "tocklai_tea_research_centre.jpg" },
-                    { name: "बारपेटा सत्र", desc: "असम में वैष्णव संस्कृति को फैलाने के लिए 16वीं शताब्दी में स्थापित एक ऐतिहासिक सांस्कृतिक संस्था।", img: "barpeta_satra.jpg" }
+                    { name: "असम का गौरव", desc: "भारतीय स्वतंत्रता में असम के ऐतिहासिक महत्व को याद करने वाला एक स्मारक।", img: "resources/pride_of_assam.jpg" },
+                    { name: "गुवाहाटी युद्ध स्मारक", desc: "द्वितीय विश्व युद्ध और अन्य संघर्षों में लड़ने वाले सैनिकों को सम्मानित करने वाला एक स्मारक।", img: "resources/guwahati_war_memorial.jpg" },
+                    { name: "कामाख्या मंदिर का इतिहास", desc: "प्राचीन शक्ति पूजा के साथ अपने संबंध के लिए जाना जाने वाला एक ऐतिहासिक मंदिर।", img: "resources/kamakhya_temple_history.jpg" },
+                    { name: "असम राज्य संग्रहालय", desc: "असम की समृद्ध सांस्कृतिक और ऐतिहासिक विरासत को प्रदर्शित करने वाला एक संग्रहालय।", img: "resources/assam_state_museum.jpg" },
+                    { name: "मदन कामदेव", desc: "प्राचीन मंदिरों के खंडहरों वाला एक पुरातात्त्विक स्थल, जिसे पौराणिक मदन कामदेव से जोड़ा जाता है।", img: "resources/madan_kamdev.jpg" },
+                    { name: "काजीरंगा राष्ट्रीय उद्यान", desc: "वन्यजीव संरक्षण में इसके ऐतिहासिक महत्व के लिए जाना जाने वाला एक यूनेस्को विश्व धरोहर स्थल, विशेष रूप से एक-सींग वाले गैंडे।", img: "resources/kaziranga_national_park.jpg" },
+                    { name: "बोरगोसवार किला", desc: "17वीं शताब्दी में निर्मित एक प्राचीन किला, जो असम के समृद्ध इतिहास का प्रतीक है।", img: "resources/borgoswar_fort.jpg" },
+                    { name: "तेजपुर खंडहर", desc: "मध्यकालीन युग के प्राचीन मंदिरों और महलों के खंडहर, जो असम की ऐतिहासिक भव्यता को प्रदर्शित करते हैं।", img: "resources/tezpur_ruins.jpg" },
+                    { name: "टोकलाई चाय अनुसंधान केंद्र", desc: "असम में चाय उद्योग के लिए एक महत्वपूर्ण ऐतिहासिक स्थल, जो चाय की खेती और इतिहास में अंतर्दृष्टि प्रदान करता है।", img: "resources/tocklai_tea_research_centre.jpg" },
+                    { name: "बारपेटा सत्र", desc: "असम में वैष्णव संस्कृति को फैलाने के लिए 16वीं शताब्दी में स्थापित एक ऐतिहासिक सांस्कृतिक संस्था।", img: "resources/barpeta_satra.jpg" }
                 ]
             },
             as: {
@@ -275,68 +283,68 @@
                 historical: "ঐতিহাসিক স্থান",
                 religiousTitle: "ধৰ্মীয় স্থান",
                 religiousContent: [
-                    { name: "কামাখ্যা মন্দিৰ", desc: "দেৱী কামাখ্যাক উৎসৰ্গিত এক পূজনীয় শক্তিপীঠ।", img: "kamakhya_temple.jpg" },
-                    { name: "উমানন্দ মন্দিৰ", desc: "ময়ুৰ দ্বীপত অৱস্থিত এক সুন্দৰ শিৱ মন্দিৰ।", img: "umananda_temple.jpg" },
-                    { name: "বসিষ্ঠ মন্দিৰ", desc: "শান্ত পৰিবেশত অৱস্থিত এক প্ৰাচীন শিৱ মন্দিৰ।", img: "basistha_temple.jpg" },
-                    { name: "নৱগ্ৰহ মন্দিৰ", desc: "নৱ গ্ৰহক উৎসৰ্গিত এক ঐতিহাসিক মন্দিৰ।", img: "navagraha_temple.jpg" },
-                    { name: "ইস্কন মন্দিৰ", desc: "শান্ত পৰিবেশ আৰু আধ্যাত্মিক কাৰ্যকলাপৰ বাবে প্ৰসিদ্ধ কৃষ্ণ মন্দিৰ।", img: "iskcon_temple.jpg" },
-                    { name: "হাজো পোৱা মক্কা", desc: "এটা পূজনীয় ইছলামিক তীৰ্থস্থান, য'ত মক্কাৰ মাটি আছে।", img: "hajo_powa_mecca.jpg" },
-                    { name: "খ্ৰীষ্ট গিৰ্জা", desc: "গুৱাহাটীলৈ এটা গুৰুত্বপূৰ্ণ খ্ৰীষ্টান উপাসনাৰ স্থান।", img: "christ_church.jpg" },
-                    { name: "দৌল গোবিন্দ মন্দিৰ", desc: "ব্ৰহ্মপুত্ৰ নদীৰ পাৰত অৱস্থিত এক প্ৰসিদ্ধ বৈষ্ণৱ মন্দিৰ।", img: "doul_govinda_temple.jpg" },
-                    { name: "পূৰ্ব তিৰুপতি বালাজী মন্দিৰ", desc: "ভগৱান ভেংকটেশ্বৰক উৎসৰ্গিত এক সুন্দৰ মন্দিৰ।", img: "balaji_temple.jpg" },
-                    { name: "লংকেশ্বৰ মন্দিৰ", desc: "এটা কম ভিৰ থকা কিন্তু গুৰুত্বপূৰ্ণ শিৱ মন্দিৰ।", img: "lankeshwar_temple.jpg" }
+                    { name: "কামাখ্যা মন্দিৰ", desc: "দেৱী কামাখ্যাক উৎসৰ্গিত এক পূজনীয় শক্তিপীঠ।", img: "resources/kamakhya_temple.jpg" },
+                    { name: "উমানন্দ মন্দিৰ", desc: "ময়ুৰ দ্বীপত অৱস্থিত এক সুন্দৰ শিৱ মন্দিৰ।", img: "resources/umananda_temple.jpg" },
+                    { name: "বসিষ্ঠ মন্দিৰ", desc: "শান্ত পৰিবেশত অৱস্থিত এক প্ৰাচীন শিৱ মন্দিৰ।", img: "resources/basistha_temple.jpg" },
+                    { name: "নৱগ্ৰহ মন্দিৰ", desc: "নৱ গ্ৰহক উৎসৰ্গিত এক ঐতিহাসিক মন্দিৰ।", img: "resources/navagraha_temple.jpg" },
+                    { name: "ইস্কন মন্দিৰ", desc: "শান্ত পৰিবেশ আৰু আধ্যাত্মিক কাৰ্যকলাপৰ বাবে প্ৰসিদ্ধ কৃষ্ণ মন্দিৰ।", img: "resources/iskcon_temple.jpg" },
+                    { name: "হাজো পোৱা মক্কা", desc: "এটা পূজনীয় ইছলামিক তীৰ্থস্থান, য'ত মক্কাৰ মাটি আছে।", img: "resources/hajo_powa_mecca.jpg" },
+                    { name: "খ্ৰীষ্ট গিৰ্জা", desc: "গুৱাহাটীলৈ এটা গুৰুত্বপূৰ্ণ খ্ৰীষ্টান উপাসনাৰ স্থান।", img: "resources/christ_church.jpg" },
+                    { name: "দৌল গোবিন্দ মন্দিৰ", desc: "ব্ৰহ্মপুত্ৰ নদীৰ পাৰত অৱস্থিত এক প্ৰসিদ্ধ বৈষ্ণৱ মন্দিৰ।", img: "resources/doul_govinda_temple.jpg" },
+                    { name: "পূৰ্ব তিৰুপতি বালাজী মন্দিৰ", desc: "ভগৱান ভেংকটেশ্বৰক উৎসৰ্গিত এক সুন্দৰ মন্দিৰ।", img: "resources/balaji_temple.jpg" },
+                    { name: "লংকেশ্বৰ মন্দিৰ", desc: "এটা কম ভিৰ থকা কিন্তু গুৰুত্বপূৰ্ণ শিৱ মন্দিৰ।", img: "resources/lankeshwar_temple.jpg" }
                 ],
                 educationalTitle: "শিক্ষামূলক",
                 educationalContent: [
-                    { name: "গুৱাহাটী বিশ্ববিদ্যালয়", desc: "বিভিন্ন পাঠ্যক্ৰমৰ প্ৰস্তাৱ দিয়া এটা প্ৰসিদ্ধ শিক্ষানুষ্ঠান।", img: "guwahati_university.jpg" },
-                    { name: "অসম ইঞ্জিনিয়াৰিং কলেজ", desc: "শিক্ষাত উৎকৰ্ষতাৰ ঐতিহ্য থকা এটা ইঞ্জিনিয়াৰিং কলেজ।", img: "assam_engineering_college.jpg" },
-                    { name: "কটন বিশ্ববিদ্যালয়", desc: "অসমৰ আটাইতকৈ পুৰণি বিশ্ববিদ্যালয়সমূহৰ এটা, যি একাডেমিক কঠোৰতাৰ বাবে জনাজাত।", img: "cotton_university.jpg" },
-                    { name: "ভাৰতীয় প্ৰযুক্তি প্ৰতিষ্ঠান গুৱাহাটী", desc: "ভাৰতৰ এটা শীৰ্ষ প্ৰযুক্তি প্ৰতিষ্ঠান, যি বিভিন্ন প্ৰযুক্তিগত কাৰ্যসূচী প্ৰদান কৰে।", img: "iit_guwahati.jpg" },
-                    { name: "অসম চিকিৎসা মহাবিদ্যালয়", desc: "অসমৰ প্ৰথম চিকিৎসা মহাবিদ্যালয়, যি গুণগত মানৰ চিকিৎসা শিক্ষা প্ৰদান কৰে।", img: "assam_medical_college.jpg" },
-                    { name: "গুৱাহাটী চিড়িয়াখানা আৰু উদ্ভিদ উদ্যান", desc: "বন্যপ্ৰাণী আৰু জীৱবৈচিত্ৰ্যৰ বিষয়ে জানিবলৈ এটা অতি ভাল ঠাই।", img: "guwahati_zoo_botanical_garden.jpg" },
-                    { name: "বোৰা ইঞ্জিনিয়াৰিং আৰু প্ৰযুক্তি প্ৰতিষ্ঠান", desc: "ইঞ্জিনিয়াৰিং কাৰ্যসূচী আৰু গৱেষণাৰ বাবে জনাজাত এটা প্ৰতিষ্ঠান।", img: "borah_institute.jpg" },
-                    { name: "ৰাষ্ট্ৰীয় ফেশ্বন প্ৰযুক্তি প্ৰতিষ্ঠান, গুৱাহাটী", desc: "ফেশ্বন ডিজাইনিং আৰু সম্পৰ্কিত পাঠ্যক্ৰমৰ বাবে এটা শীৰ্ষ প্ৰতিষ্ঠান।", img: "nift_guwahati.jpg" },
-                    { name: "তেজপুৰ বিশ্ববিদ্যালয়", desc: "অসমৰ এটা শীৰ্ষ বিশ্ববিদ্যালয়, যি আন্তঃবিষয়ক কাৰ্যসূচীৰ বাবে জনাজাত।", img: "tezpur_university.jpg" },
-                    { name: "গুৱাহাটী বাণিজ্য মহাবিদ্যালয়", desc: "গুৱাহাটীলৈ বাণিজ্য পাঠ্যক্ৰমৰ প্ৰস্তাৱ দিয়া এটা প্ৰসিদ্ধ মহাবিদ্যালয়।", img: "gauhati_commerce_college.jpg" }
+                    { name: "গুৱাহাটী বিশ্ববিদ্যালয়", desc: "বিভিন্ন পাঠ্যক্ৰমৰ প্ৰস্তাৱ দিয়া এটা প্ৰসিদ্ধ শিক্ষানুষ্ঠান।", img: "resources/guwahati_university.jpg" },
+                    { name: "অসম ইঞ্জিনিয়াৰিং কলেজ", desc: "শিক্ষাত উৎকৰ্ষতাৰ ঐতিহ্য থকা এটা ইঞ্জিনিয়াৰিং কলেজ।", img: "resources/assam_engineering_college.jpg" },
+                    { name: "কটন বিশ্ববিদ্যালয়", desc: "অসমৰ আটাইতকৈ পুৰণি বিশ্ববিদ্যালয়সমূহৰ এটা, যি একাডেমিক কঠোৰতাৰ বাবে জনাজাত।", img: "resources/cotton_university.jpg" },
+                    { name: "ভাৰতীয় প্ৰযুক্তি প্ৰতিষ্ঠান গুৱাহাটী", desc: "ভাৰতৰ এটা শীৰ্ষ প্ৰযুক্তি প্ৰতিষ্ঠান, যি বিভিন্ন প্ৰযুক্তিগত কাৰ্যসূচী প্ৰদান কৰে।", img: "resources/iit_guwahati.jpg" },
+                    { name: "অসম চিকিৎসা মহাবিদ্যালয়", desc: "অসমৰ প্ৰথম চিকিৎসা মহাবিদ্যালয়, যি গুণগত মানৰ চিকিৎসা শিক্ষা প্ৰদান কৰে।", img: "resources/assam_medical_college.jpg" },
+                    { name: "গুৱাহাটী চিড়িয়াখানা আৰু উদ্ভিদ উদ্যান", desc: "বন্যপ্ৰাণী আৰু জীৱবৈচিত্ৰ্যৰ বিষয়ে জানিবলৈ এটা অতি ভাল ঠাই।", img: "resources/guwahati_zoo_botanical_garden.jpg" },
+                    { name: "বোৰা ইঞ্জিনিয়াৰিং আৰু প্ৰযুক্তি প্ৰতিষ্ঠান", desc: "ইঞ্জিনিয়াৰিং কাৰ্যসূচী আৰু গৱেষণাৰ বাবে জনাজাত এটা প্ৰতিষ্ঠান।", img: "resources/borah_institute.jpg" },
+                    { name: "ৰাষ্ট্ৰীয় ফেশ্বন প্ৰযুক্তি প্ৰতিষ্ঠান, গুৱাহাটী", desc: "ফেশ্বন ডিজাইনিং আৰু সম্পৰ্কিত পাঠ্যক্ৰমৰ বাবে এটা শীৰ্ষ প্ৰতিষ্ঠান।", img: "resources/nift_guwahati.jpg" },
+                    { name: "তেজপুৰ বিশ্ববিদ্যালয়", desc: "অসমৰ এটা শীৰ্ষ বিশ্ববিদ্যালয়, যি আন্তঃবিষয়ক কাৰ্যসূচীৰ বাবে জনাজাত।", img: "resources/tezpur_university.jpg" },
+                    { name: "গুৱাহাটী বাণিজ্য মহাবিদ্যালয়", desc: "গুৱাহাটীলৈ বাণিজ্য পাঠ্যক্ৰমৰ প্ৰস্তাৱ দিয়া এটা প্ৰসিদ্ধ মহাবিদ্যালয়।", img: "resources/gauhati_commerce_college.jpg" }
                 ],
                 natureTitle: "প্ৰকৃতি",
                 natureContent: [
-                    { name: "কাজিৰঙা ৰাষ্ট্ৰীয় উদ্যান", desc: "এটা UNESCO বিশ্ব ঐতিহ্যবাহী স্থান, যি এক-শৃঙ্গ গঁড়ৰ জনসংখ্যাৰ বাবে জনাজাত।", img: "kaziranga_national_park.jpg" },
-                    { name: "মানস ৰাষ্ট্ৰীয় উদ্যান", desc: "এটা ৰাষ্ট্ৰীয় উদ্যান আৰু UNESCO বিশ্ব ঐতিহ্যবাহী স্থান, যি সমৃদ্ধ জীৱবৈচিত্ৰ্যৰ বাবে জনাজাত।", img: "manas_national_park.jpg" },
-                    { name: "উমানন্দ দ্বীপ", desc: "ব্ৰহ্মপুত্ৰ নদীত অৱস্থিত এটা সৰু দ্বীপ, যি সুন্দৰ দৃশ্য আৰু শান্তি প্ৰদান কৰে।", img: "umananda_island.jpg" },
-                    { name: "মাজুলী দ্বীপ", desc: "বিশ্বৰ আটাইতকৈ ডাঙৰ নদী দ্বীপ, যি ইয়াৰ উজ্জ্বল সংস্কৃতি আৰু প্ৰাকৃতিক সৌন্দৰ্যৰ বাবে জনাজাত।", img: "majuli_island.jpg" },
-                    { name: "নামেৰী ৰাষ্ট্ৰীয় উদ্যান", desc: "বৈচিত্ৰ্যময় বন্যপ্ৰাণীৰ সৈতে এটা সুন্দৰ উদ্যান, যি চৰাই চাবলৈ আৰু ট্ৰেকিং কৰিবলৈ জনাজাত।", img: "nameri_national_park.jpg" },
-                    { name: "ডিব্ৰু-চৈখোৱা ৰাষ্ট্ৰীয় উদ্যান", desc: "বন্যপ্ৰাণীৰ বাবে এটা স্বৰ্গ, বিশেষকৈ ইয়াৰ পনীয়াভূমি আৰু পৰিযায়ী চৰাইৰ বাবে জনাজাত।", img: "dibru_saikhowa_national_park.jpg" },
-                    { name: "চোৱালকুছি", desc: "প্ৰাকৃতিক সৌন্দৰ্য আৰু ৰেচম বুনাৰ পৰম্পৰাৰ বাবে জনাজাত এটা গাঁও।", img: "sualkuchi.jpg" },
-                    { name: "ব্ৰহ্মপুত্ৰ নদী", desc: "অসমৰ জীৱনধাৰা, যি ইয়াৰ বিশালতা আৰু সমৃদ্ধ পৰিসৰ ব্যৱস্থাৰ বাবে জনাজাত।", img: "brahmaputra_river.jpg" },
-                    { name: "ভোৰালী নদী", desc: "অসম উপত্যকাত বৈ থকা এটা সুন্দৰ নদী, যি ইয়াৰ শান্তি আৰু চাৰিওফালে থকা প্ৰকৃতিৰ বাবে জনাজাত।", img: "bhorali_river.jpg" },
-                    { name: "কাকোদঙা নদী", desc: "সেউজীয়া পৰিবেশেৰে আৱৰা এটা শান্ত নদী, যি এটা শান্তিপূৰ্ণ আশ্ৰয় প্ৰদান কৰে।", img: "kakodonga_river.jpg" }
+                    { name: "কাজিৰঙা ৰাষ্ট্ৰীয় উদ্যান", desc: "এটা UNESCO বিশ্ব ঐতিহ্যবাহী স্থান, যি এক-শৃঙ্গ গঁড়ৰ জনসংখ্যাৰ বাবে জনাজাত।", img: "resources/kaziranga_national_park.jpg" },
+                    { name: "মানস ৰাষ্ট্ৰীয় উদ্যান", desc: "এটা ৰাষ্ট্ৰীয় উদ্যান আৰু UNESCO বিশ্ব ঐতিহ্যবাহী স্থান, যি সমৃদ্ধ জীৱবৈচিত্ৰ্যৰ বাবে জনাজাত।", img: "resources/manas_national_park.jpg" },
+                    { name: "উমানন্দ দ্বীপ", desc: "ব্ৰহ্মপুত্ৰ নদীত অৱস্থিত এটা সৰু দ্বীপ, যি সুন্দৰ দৃশ্য আৰু শান্তি প্ৰদান কৰে।", img: "resources/umananda_island.jpg" },
+                    { name: "মাজুলী দ্বীপ", desc: "বিশ্বৰ আটাইতকৈ ডাঙৰ নদী দ্বীপ, যি ইয়াৰ উজ্জ্বল সংস্কৃতি আৰু প্ৰাকৃতিক সৌন্দৰ্যৰ বাবে জনাজাত।", img: "resources/majuli_island.jpg" },
+                    { name: "নামেৰী ৰাষ্ট্ৰীয় উদ্যান", desc: "বৈচিত্ৰ্যময় বন্যপ্ৰাণীৰ সৈতে এটা সুন্দৰ উদ্যান, যি চৰাই চাবলৈ আৰু ট্ৰেকিং কৰিবলৈ জনাজাত।", img: "resources/nameri_national_park.jpg" },
+                    { name: "ডিব্ৰু-চৈখোৱা ৰাষ্ট্ৰীয় উদ্যান", desc: "বন্যপ্ৰাণীৰ বাবে এটা স্বৰ্গ, বিশেষকৈ ইয়াৰ পনীয়াভূমি আৰু পৰিযায়ী চৰাইৰ বাবে জনাজাত।", img: "resources/dibru_saikhowa_national_park.jpg" },
+                    { name: "চোৱালকুছি", desc: "প্ৰাকৃতিক সৌন্দৰ্য আৰু ৰেচম বুনাৰ পৰম্পৰাৰ বাবে জনাজাত এটা গাঁও।", img: "resources/sualkuchi.jpg" },
+                    { name: "ব্ৰহ্মপুত্ৰ নদী", desc: "অসমৰ জীৱনধাৰা, যি ইয়াৰ বিশালতা আৰু সমৃদ্ধ পৰিসৰ ব্যৱস্থাৰ বাবে জনাজাত।", img: "resources/brahmaputra_river.jpg" },
+                    { name: "ভোৰালী নদী", desc: "অসম উপত্যকাত বৈ থকা এটা সুন্দৰ নদী, যি ইয়াৰ শান্তি আৰু চাৰিওফালে থকা প্ৰকৃতিৰ বাবে জনাজাত।", img: "resources/bhorali_river.jpg" },
+                    { name: "কাকোদঙা নদী", desc: "সেউজীয়া পৰিবেশেৰে আৱৰা এটা শান্ত নদী, যি এটা শান্তিপূৰ্ণ আশ্ৰয় প্ৰদান কৰে।", img: "resources/kakodonga_river.jpg" }
                 ],
                 foodTitle: "আহাৰ",
                 foodContent: [
-                    { name: "খৰিকা", desc: "এটা প্ৰামাণিক অসমীয়া ৰেষ্টুৰেণ্ট, যি ইয়াৰ পৰম্পৰাগত গ্ৰিল কৰা মাংস আৰু মাছৰ খাদ্যৰ বাবে জনাজাত।", img: "khorika.jpg" },
-                    { name: "পেৰাডাইজ ৰেষ্টুৰেণ্ট", desc: "এটা আৰামদায়ক পৰিৱেশত প্ৰামাণিক অসমীয়া আৰু উত্তৰ-পূবীয়া খাদ্য পৰিবেশন কৰিবলৈ জনাজাত।", img: "paradise_restaurant.jpg" },
-                    { name: "ৰাজমহল ৰেষ্টুৰেণ্ট", desc: "অসমীয়া আৰু ভাৰতীয় খাদ্যৰ বিস্তৃত মেনু প্ৰদান কৰা এটা জনাজাত স্থান।", img: "rajmahal_restaurant.jpg" },
-                    { name: "ডলফিন ৰেষ্টুৰেণ্ট", desc: "বিভিন্ন প্ৰামাণিক সাগৰীয় খাদ্য আৰু অসমীয়া খাদ্য পৰিবেশন কৰা এটা সাধাৰণ ভোজন স্থান।", img: "dolphin_restaurant.jpg" },
-                    { name: "দ্য কিচেন", desc: "এটা ভোজনালয় যি অসমীয়া পৰম্পৰাগত খাদ্যত বিশেষজ্ঞ, য'ত স্থানীয় উপাদান আৰু স্বাদ অন্তৰ্ভুক্ত।", img: "the_kitchen.jpg" },
-                    { name: "মিচিং কিচেন", desc: "এটা ৰেষ্টুৰেণ্ট যি মাছ আৰু চাউল ভিত্তিক খাদ্যৰ ওপৰত বিশেষ গুৰুত্ব দি মিচিং খাদ্যৰ প্ৰামাণিক স্বাদ প্ৰদান কৰে।", img: "mishing_kitchen.jpg" },
-                    { name: "বাঁহৰ শুট", desc: "এটা অনন্য ৰেষ্টুৰেণ্ট যি অসমীয়া আৰু জনজাতীয় খাদ্যৰ মিশ্ৰণ পৰিবেশন কৰে, য'ত বাঁহৰ শুটৰ খাদ্য অন্তৰ্ভুক্ত।", img: "bamboo_shoot.jpg" },
-                    { name: "কল্যাণী", desc: "এটা ফাইন ডাইনিং ৰেষ্টুৰেণ্ট যি অসমীয়া আৰু আঞ্চলিক খাদ্যৰ বিস্তৃত বাছনি প্ৰদান কৰে, যি শাকাহাৰী বিকল্পত বিশেষজ্ঞ।", img: "kalyani.jpg" },
-                    { name: "কেফে অসম", desc: "এটা স্থান যি প্ৰামাণিক অসমীয়া স্বাদ টেবুললৈ আনে, য'ত স্থানীয় স্ন্যাক্স, চাহ আৰু খাদ্য অন্তৰ্ভুক্ত।", img: "cafe_assam.jpg" },
-                    { name: "তন্দুৰ", desc: "প্ৰামাণিক তন্দুৰী আৰু অসমীয়া ফিউজন খাদ্য পৰিবেশন কৰা, য'ত মাংস আৰু সাগৰীয় খাদ্যৰ এটা বিস্তৃত বাছনি অন্তৰ্ভুক্ত।", img: "tandoor.jpg" }
+                    { name: "খৰিকা", desc: "এটা প্ৰামাণিক অসমীয়া ৰেষ্টুৰেণ্ট, যি ইয়াৰ পৰম্পৰাগত গ্ৰিল কৰা মাংস আৰু মাছৰ খাদ্যৰ বাবে জনাজাত।", img: "resources/khorika.jpg" },
+                    { name: "পেৰাডাইজ ৰেষ্টুৰেণ্ট", desc: "এটা আৰামদায়ক পৰিৱেশত প্ৰামাণিক অসমীয়া আৰু উত্তৰ-পূবীয়া খাদ্য পৰিবেশন কৰিবলৈ জনাজাত।", img: "resources/paradise_restaurant.jpg" },
+                    { name: "ৰাজমহল ৰেষ্টুৰেণ্ট", desc: "অসমীয়া আৰু ভাৰতীয় খাদ্যৰ বিস্তৃত মেনু প্ৰদান কৰা এটা জনাজাত স্থান।", img: "resources/rajmahal_restaurant.jpg" },
+                    { name: "ডলফিন ৰেষ্টুৰেণ্ট", desc: "বিভিন্ন প্ৰামাণিক সাগৰীয় খাদ্য আৰু অসমীয়া খাদ্য পৰিবেশন কৰা এটা সাধাৰণ ভোজন স্থান।", img: "resources/dolphin_restaurant.jpg" },
+                    { name: "দ্য কিচেন", desc: "এটা ভোজনালয় যি অসমীয়া পৰম্পৰাগত খাদ্যত বিশেষজ্ঞ, য'ত স্থানীয় উপাদান আৰু স্বাদ অন্তৰ্ভুক্ত।", img: "resources/the_kitchen.jpg" },
+                    { name: "মিচিং কিচেন", desc: "এটা ৰেষ্টুৰেণ্ট যি মাছ আৰু চাউল ভিত্তিক খাদ্যৰ ওপৰত বিশেষ গুৰুত্ব দি মিচিং খাদ্যৰ প্ৰামাণিক স্বাদ প্ৰদান কৰে।", img: "resources/mishing_kitchen.jpg" },
+                    { name: "বাঁহৰ শুট", desc: "এটা অনন্য ৰেষ্টুৰেণ্ট যি অসমীয়া আৰু জনজাতীয় খাদ্যৰ মিশ্ৰণ পৰিবেশন কৰে, য'ত বাঁহৰ শুটৰ খাদ্য অন্তৰ্ভুক্ত।", img: "resources/bamboo_shoot.jpg" },
+                    { name: "কল্যাণী", desc: "এটা ফাইন ডাইনিং ৰেষ্টুৰেণ্ট যি অসমীয়া আৰু আঞ্চলিক খাদ্যৰ বিস্তৃত বাছনি প্ৰদান কৰে, যি শাকাহাৰী বিকল্পত বিশেষজ্ঞ।", img: "resources/kalyani.jpg" },
+                    { name: "কেফে অসম", desc: "এটা স্থান যি প্ৰামাণিক অসমীয়া স্বাদ টেবুললৈ আনে, য'ত স্থানীয় স্ন্যাক্স, চাহ আৰু খাদ্য অন্তৰ্ভুক্ত।", img: "resources/cafe_assam.jpg" },
+                    { name: "তন্দুৰ", desc: "প্ৰামাণিক তন্দুৰী আৰু অসমীয়া ফিউজন খাদ্য পৰিবেশন কৰা, য'ত মাংস আৰু সাগৰীয় খাদ্যৰ এটা বিস্তৃত বাছনি অন্তৰ্ভুক্ত।", img: "resources/tandoor.jpg" }
                 ],
                 historicalTitle: "ঐতিহাসিক স্থান",
                 historicalContent: [
-                    { name: "অসমৰ গৌৰৱ", desc: "ভাৰতীয় স্বাধীনতাত অসমৰ ঐতিহাসিক গুৰুত্বক স্মৰণ কৰা এটা স্মাৰক।", img: "pride_of_assam.jpg" },
-                    { name: "গুৱাহাটী যুদ্ধ স্মাৰক", desc: "দ্বিতীয় বিশ্বযুদ্ধ আৰু আন সংঘৰ্ষত যুঁজ কৰা সৈনিকসকলক সন্মান জনোৱা এটা স্মাৰক।", img: "guwahati_war_memorial.jpg" },
-                    { name: "কামাখ্যা মন্দিৰৰ ইতিহাস", desc: "প্ৰাচীন শক্তি পূজাৰ সৈতে ইয়াৰ সম্পৰ্কৰ বাবে জনাজাত এটা ঐতিহাসিক মন্দিৰ।", img: "kamakhya_temple_history.jpg" },
-                    { name: "অসম ৰাজ্যিক সংগ্ৰহালয়", desc: "অসমৰ সমৃদ্ধ সাংস্কৃতিক আৰু ঐতিহাসিক ঐতিহ্য প্ৰদৰ্শন কৰা এটা সংগ্ৰহালয়।", img: "assam_state_museum.jpg" },
-                    { name: "মদন কামদেৱ", desc: "প্ৰাচীন মন্দিৰৰ খণ্ডহৰ থকা এটা পুৰাতাত্ত্বিক স্থান, যাক পুৰাণিক মদন কামদেৱৰ সৈতে সংযোগ কৰা হয়।", img: "madan_kamdev.jpg" },
-                    { name: "কাজিৰঙা ৰাষ্ট্ৰীয় উদ্যান", desc: "বন্যপ্ৰাণী সংৰক্ষণত ইয়াৰ ঐতিহাসিক গুৰুত্বৰ বাবে জনাজাত এটা UNESCO বিশ্ব ঐতিহ্যবাহী স্থান।", img: "kaziranga_national_park.jpg" },
-                    { name: "বৰ্গোস্বৰ দুৰ্গ", desc: "১৭শ শতিকাত নিৰ্মিত এটা প্ৰাচীন দুৰ্গ, যি অসমৰ সমৃদ্ধ ইতিহাসৰ প্ৰতীক।", img: "borgoswar_fort.jpg" },
-                    { name: "তেজপুৰৰ খণ্ডহৰ", desc: "মধ্যযুগৰ প্ৰাচীন মন্দিৰ আৰু মহলৰ খণ্ডহৰ, যি অসমৰ ঐতিহাসিক মহিমা প্ৰদৰ্শন কৰে।", img: "tezpur_ruins.jpg" },
-                    { name: "টোকলাই চাহ গৱেষণা কেন্দ্ৰ", desc: "অসমত চাহ উদ্যোগৰ বাবে এটা গুৰুত্বপূৰ্ণ ঐতিহাসিক স্থান।", img: "tocklai_tea_research_centre.jpg" },
-                    { name: "বাৰপেটা সত্র", desc: "অসমত বৈষ্ণৱ সংস্কৃতি বিস্তাৰ কৰিবলৈ ১৬শ শতিকাত প্ৰতিষ্ঠিত এটা ঐতিহাসিক সাংস্কৃতিক প্ৰতিষ্ঠান।", img: "barpeta_satra.jpg" }
+                    { name: "অসমৰ গৌৰৱ", desc: "ভাৰতীয় স্বাধীনতাত অসমৰ ঐতিহাসিক গুৰুত্বক স্মৰণ কৰা এটা স্মাৰক।", img: "resources/pride_of_assam.jpg" },
+                    { name: "গুৱাহাটী যুদ্ধ স্মাৰক", desc: "দ্বিতীয় বিশ্বযুদ্ধ আৰু আন সংঘৰ্ষত যুঁজ কৰা সৈনিকসকলক সন্মান জনোৱা এটা স্মাৰক।", img: "resources/guwahati_war_memorial.jpg" },
+                    { name: "কামাখ্যা মন্দিৰৰ ইতিহাস", desc: "প্ৰাচীন শক্তি পূজাৰ সৈতে ইয়াৰ সম্পৰ্কৰ বাবে জনাজাত এটা ঐতিহাসিক মন্দিৰ।", img: "resources/kamakhya_temple_history.jpg" },
+                    { name: "অসম ৰাজ্যিক সংগ্ৰহালয়", desc: "অসমৰ সমৃদ্ধ সাংস্কৃতিক আৰু ঐতিহাসিক ঐতিহ্য প্ৰদৰ্শন কৰা এটা সংগ্ৰহালয়।", img: "resources/assam_state_museum.jpg" },
+                    { name: "মদন কামদেৱ", desc: "প্ৰাচীন মন্দিৰৰ খণ্ডহৰ থকা এটা পুৰাতাত্ত্বিক স্থান, যাক পুৰাণিক মদন কামদেৱৰ সৈতে সংযোগ কৰা হয়।", img: "resources/madan_kamdev.jpg" },
+                    { name: "কাজিৰঙা ৰাষ্ট্ৰীয় উদ্যান", desc: "বন্যপ্ৰাণী সংৰক্ষণত ইয়াৰ ঐতিহাসিক গুৰুত্বৰ বাবে জনাজাত এটা UNESCO বিশ্ব ঐতিহ্যবাহী স্থান।", img: "resources/kaziranga_national_park.jpg" },
+                    { name: "বৰ্গোস্বৰ দুৰ্গ", desc: "১৭শ শতিকাত নিৰ্মিত এটা প্ৰাচীন দুৰ্গ, যি অসমৰ সমৃদ্ধ ইতিহাসৰ প্ৰতীক।", img: "resources/borgoswar_fort.jpg" },
+                    { name: "তেজপুৰৰ খণ্ডহৰ", desc: "মধ্যযুগৰ প্ৰাচীন মন্দিৰ আৰু মহলৰ খণ্ডহৰ, যি অসমৰ ঐতিহাসিক মহিমা প্ৰদৰ্শন কৰে।", img: "resources/tezpur_ruins.jpg" },
+                    { name: "টোকলাই চাহ গৱেষণা কেন্দ্ৰ", desc: "অসমত চাহ উদ্যোগৰ বাবে এটা গুৰুত্বপূৰ্ণ ঐতিহাসিক স্থান।", img: "resources/tocklai_tea_research_centre.jpg" },
+                    { name: "বাৰপেটা সত্র", desc: "অসমত বৈষ্ণৱ সংস্কৃতি বিস্তাৰ কৰিবলৈ ১৬শ শতিকাত প্ৰতিষ্ঠিত এটা ঐতিহাসিক সাংস্কৃতিক প্ৰতিষ্ঠান।", img: "resources/barpeta_satra.jpg" }
                 ]
             }
         };
